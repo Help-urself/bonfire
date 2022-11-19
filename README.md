@@ -45,46 +45,90 @@ def main():#the main name can be anything, it doesn't matter
 if __name__ == '__main__':
        run(app)#app.run(port=8080,host="0.0.0.0",debug=True)
 ```
+  </details>
   
-## documentation (in development)
+## Documentation (in development)
 <details>
   <summary> Click </summary>
-
-
-**1.fuction**
-- send_message
   
-- set webhook `https://api.telegram.org/botTOKEN/setWebhook?url=you url ngrok/hosting url`
+  
+### functions
 
-### Simple [`send_message`](https://core.telegram.org/method/messages.sendMessage) request
+**send_message**
+  
+```python 
+def send_message(bot,chat_id,text):
+  ```
+  -**bot** - keyword where you store the token<br>
+  -**chat_id** - you can use your chat id or use the chat_id method<br>
+  -**text** - 
+your message text<br>
+  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  <details>
+  <summary> example </summary>
+    
+```python 
+#without parse_mode
+send_message(bot=bot,chat_id=chat_id,text=f'hello :)')
+#with parse_mode
+send_message(bot=bot,chat_id=chat_id,text=f'<b>hello :)<b>',parse_mode='HTML') #make text bold
+  ```
+    
+   </details>
+    <br>
+    <br>
+    
+ **reply_message**
+  
+```python 
+def reply_message(bot,chat_id,msg_id,text,parse_mode):
+  ```
+  -**bot** - keyword where you store the token<br>
+  -**chat_id** - you can use your chat id or use the chat_id method<br>
+  -**text** - your message text<br>
+  -**msg_id** - you can use your message id or use the message_id method <br>
+  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  <details>
+  <summary> example </summary>
+    
+```python 
+#without parse_mode
+reply_message(bot,msg_id=499,chat_id=chat_id,text="reply message ._.")
+#with parse_mode
+reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bold .-.</b>",parse_mode="HTML")#make text bold
+  ```
+    
+   </details>
+    <br>
+    <br>
 
-```python
-import os
-import sys
-sys.path.append(os.path.abspath('your campfire folder path'))
-import Bot
-from Bot import Bots,edit_message,commands,run
-from flask import Flask
-from method import *
-import time
-from flask import request,Response
-import requests
-app = Flask(__name__)
-bot=Bots("TOKEN")#setting up a token for requests
+**delete_message**
+```python 
+def reply_message(bot,chat_id,msg_id,text,parse_mode):
+  ```
+  -**bot** - keyword where you store the token<br>
+  -**chat_id** - you can use your chat id or use the chat_id method<br>
+  -**text** - your message text<br>
+  -**msg_id** - you can use your message id or use the message_id method <br>
+  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  <details>
+  <summary> example </summary>
+    
+```python 
+#without parse_mode
+reply_message(bot,msg_id=499,chat_id=chat_id,text="reply message ._.")
+#with parse_mode
+reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bold .-.</b>",parse_mode="HTML")#make text bold
+  ```
+    
+   </details>
+    
+  
+    
+    
+  
+  
+  
 
-@commands(app)#message handler
-def main():#the main name can be anything, it doesn't matter
- try:
-    message=request.get_json()#receive a message
-    chat_id,text,message_id,message_author_username,message_author_id,message_author_is_bot,message_author_first_name,message_author_language_code,message_date=parse_message(message=message)#methods message
-    if reply_message_text == "/start": #/start command handler
-        send_message(bot=bot,chat_id=chat_id,text=f'hello @{message_author_username}!')#send message
- except Exception as error:
-     print(error)
- return Response('OK', status=200)#return to cmd (POST/ 200 OK)
-
-if __name__ == '__main__':
-       run(app)#app.run(port=8080,host="0.0.0.0",debug=True)
-```
 
 
