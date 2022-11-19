@@ -98,7 +98,7 @@ def reply_message(bot,chat_id,msg_id,text,parse_mode):
 ```python 
 #без parse_mode
 reply_message(bot,msg_id=message_id,chat_id=chat_id,text="відповідь ._.")
-#with parse_mode
+#з parse_mode
 reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>відповідь жирним шрифтом .-.</b>",parse_mode="HTML")#робимо текст жирним шрифтом 
   ```
     
