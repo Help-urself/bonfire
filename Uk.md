@@ -35,7 +35,7 @@ import requests
 app = Flask(__name__)
 bot=Bots("TOKEN")#налаштовуемо токен
 
-@commands(app)#ця функція може бути лиш <br>одна</br>
+@commands(app)#ця функція може бути лиш одна
 def main():#назва функції не відіграє ролі,вона може бути люба 
  try:
     message=request.get_json()#отримуемо повідомлення
@@ -53,29 +53,28 @@ if __name__ == '__main__':
   
 ## документація (в розробці)
 <details>
-  <summary> Click </summary>
+  <summary> Нажміть </summary>
   
   
-### functions
+### Функції 
 
 **send_message**
   
 ```python 
 def send_message(bot,chat_id,text):
   ```
-  -**bot** - keyword where you store the token<br>
-  -**chat_id** - you can use your chat id or use the chat_id method<br>
-  -**text** - 
-your message text<br>
-  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  -**bot** - Функція де в вас знаходиться TOKEN<br>
+  -**chat_id** - Ви можете використовувати метод chat_id або своє айді<br>
+  -**text** - Ваш Текст для повідомлення<br>
+  -**parse_mode**(	Optional ) - parse mode для HTML (не обов'язково)
   <details>
-  <summary> example </summary>
+  <summary> Приклад </summary>
     
 ```python 
-#without parse_mode
-send_message(bot=bot,chat_id=chat_id,text=f'hello :)')
-#with parse_mode
-send_message(bot=bot,chat_id=chat_id,text=f'<b>hello :)<b>',parse_mode='HTML') #make text bold
+#без parse_mode
+send_message(bot=bot,chat_id=chat_id,text=f'Привіт Друже! :)')
+#з parse_mode
+send_message(bot=bot,chat_id=chat_id,text=f'<b>Привіт друже :)<b>',parse_mode='HTML') #виділить текст жирним курсивом 
   ```
     
    </details>
