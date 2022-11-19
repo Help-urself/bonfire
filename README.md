@@ -41,7 +41,7 @@ def main():#the main name can be anything, it doesn't matter
  try:
     message=request.get_json()#receive a message
     chat_id,text,message_id,message_author_username,message_author_id,message_author_is_bot,message_author_first_name,message_author_language_code,message_date=parse_message(message=message)#methods message
-    if "/start" in text #/start command handler
+    if "/start" in text: #/start command handler
         send_message(bot=bot,chat_id=chat_id,text=f'hello @{message_author_username}!')#send message
  except Exception as error:
      print(error)
