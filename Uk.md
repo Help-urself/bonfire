@@ -90,8 +90,7 @@ def reply_message(bot,chat_id,msg_id,text,parse_mode):
   -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br>
   -**text** - Ваш Текст для повідомлення<br>
   -**parse_mode**(Не обов'язково) - parse mode для HTML<br>
-  -**msg_id** - Ви можете використовувати метод message_id Або свое айді повідомлення<br>
-  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  -**msg_id** - Ви можете використовувати метод message_id Або свое айді повідомлення<br>  
   <details>
   <summary> Приклад </summary>
     
@@ -130,8 +129,8 @@ send_sticker(bot,chat_id=chat_id,sticker="CAACAgIAAxkBAAEGdwNjd-IwPaLBzeqJW1DJvD
 def delete_message(bot,chat_id,msg_id):
   ```
   -**bot** - Функція де в вас знаходиться TOKEN<br>
-  -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br>
-  -**msg_id** - Ви можете використовувати метод message_id (але тоді повідомлення користувача буде видалятися або у лічних повідомленнях,або у групах де у бота е на не права) чи встановити свое айді Повідомлення <br>
+  -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br
+  -**msg_id** - Ви можете використовувати метод message_id (але тоді повідомлення користувача буде видалятися або у лічних повідомленнях,або у групах де у бота є на то права) чи встановити свое айді Повідомлення <br>
 
 
   <details>
