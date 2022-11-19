@@ -27,7 +27,7 @@ import os
 import sys
 sys.path.append(os.path.abspath('your campfire folder path'))
 import Bot
-from Bot import Bots,edit_message,commands,run
+from Bot import Bots,commands,run
 from flask import Flask
 from method import *
 import time
