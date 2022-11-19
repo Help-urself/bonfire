@@ -3,7 +3,11 @@
 
 
 
-**bonfire** — framework for [Telegram Bot API](https://core.telegram.org/bots/api) built on [flask](https://flask.palletsprojects.com/en/2.2.x/ ) and [requests](https://requests.readthedocs.io/en/latest/)
+**bonfire** — framework for [Telegram Bot API](https://core.telegram.org/bots/api) built on [flask](https://flask.palletsprojects.com/en/2.2.x/ ) and [requests](https://requests.readthedocs.io/en/latest/) <br>
+**instaling**
+```python 
+git clone https://github.com/Help-urself/bonfire
+```
 
 
 ## Examples
@@ -102,23 +106,19 @@ reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bo
     <br>
     <br>
 
-**delete_message**
+**send_sticker**
 ```python 
-def reply_message(bot,chat_id,msg_id,text,parse_mode):
+def send_sticker(bot,chat_id,sticker):
   ```
   -**bot** - keyword where you store the token<br>
   -**chat_id** - you can use your chat id or use the chat_id method<br>
-  -**text** - your message text<br>
-  -**msg_id** - you can use your message id or use the message_id method <br>
-  -**parse_mode**(	Optional ) - parse mode in HTML (optional)
+  -**sticker** -unique sticker key, you can get it from [idstickerbot](https://t.me/idstickerbot)<br>
+
   <details>
   <summary> example </summary>
     
 ```python 
-#without parse_mode
-reply_message(bot,msg_id=499,chat_id=chat_id,text="reply message ._.")
-#with parse_mode
-reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bold .-.</b>",parse_mode="HTML")#make text bold
+send_sticker(bot,chat_id=chat_id,sticker="CAACAgIAAxkBAAEGdwNjd-IwPaLBzeqJW1DJvDLGnYOJpwACQBMAAvZDSUjqTxpxhtdlhisE")
   ```
     
    </details>
@@ -133,11 +133,12 @@ def delete_message(bot,chat_id,msg_id):
   -**chat_id** - you can use your chat id or use the chat_id method<br>
   -**msg_id** - you can use your message id or use the message_id method <br>
 
+
   <details>
   <summary> example </summary>
     
 ```python 
-#without parse_mode
+
 delete_message(bot,msg_id=message_id,chat_id=chat_id) #this code will only work in a private chat, so that it would work for the bot to have the right to delete messages or replace message_id with reply_message_id, you can find an example in the folder example->delete_message.py
 
   ```
