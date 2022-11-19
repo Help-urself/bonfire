@@ -40,7 +40,7 @@ def main():#назва функції не відіграє ролі,вона м
  try:
     message=request.get_json()#отримуемо повідомлення
     chat_id,text,message_id,message_author_username,message_author_id,message_author_is_bot,message_author_first_name,message_author_language_code,message_date=parse_message(message=message)#важлива складова,не міняйте цей порядок,інакше код не буде працювати 
-    if "/start" in text #ловимо комманду /start
+    if "/start" in text: #ловимо комманду /start
         send_message(bot=bot,chat_id=chat_id,text=f'hello @{message_author_username}!')#відправляемо повідомлення 
  except Exception as error:
      print(error)
