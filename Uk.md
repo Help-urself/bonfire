@@ -66,7 +66,7 @@ def send_message(bot,chat_id,text):
   -**bot** - Функція де в вас знаходиться TOKEN<br>
   -**chat_id** - Ви можете використовувати метод chat_id або своє айді<br>
   -**text** - Ваш Текст для повідомлення<br>
-  -**parse_mode**(	Optional ) - parse mode для HTML (не обов'язково)
+  -**parse_mode**(Не обов'язково) - parse mode для HTML
   <details>
   <summary> Приклад </summary>
     
@@ -86,19 +86,20 @@ send_message(bot=bot,chat_id=chat_id,text=f'<b>Привіт друже :)<b>',pa
 ```python 
 def reply_message(bot,chat_id,msg_id,text,parse_mode):
   ```
-  -**bot** - keyword where you store the token<br>
-  -**chat_id** - you can use your chat id or use the chat_id method<br>
-  -**text** - your message text<br>
-  -**msg_id** - you can use your message id or use the message_id method <br>
+  -**bot** - Функція де в вас знаходиться TOKEN<br>
+  -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br>
+  -**text** - Ваш Текст для повідомлення<br>
+  -**parse_mode**(Не обов'язково) - parse mode для HTML<br>
+  -**msg_id** - Ви можете використовувати метод message_id Або свое айді повідомлення<br>
   -**parse_mode**(	Optional ) - parse mode in HTML (optional)
   <details>
-  <summary> example </summary>
+  <summary> Приклад </summary>
     
 ```python 
-#without parse_mode
-reply_message(bot,msg_id=message_id,chat_id=chat_id,text="reply message ._.")
+#без parse_mode
+reply_message(bot,msg_id=message_id,chat_id=chat_id,text="відповідь ._.")
 #with parse_mode
-reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bold .-.</b>",parse_mode="HTML")#make text bold
+reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>відповідь жирним шрифтом .-.</b>",parse_mode="HTML")#робимо текст жирним шрифтом 
   ```
     
    </details>
@@ -109,15 +110,15 @@ reply_message(bot,msg_id=message_id,chat_id=chat_id,text="<b>reply message is bo
 ```python 
 def send_sticker(bot,chat_id,sticker):
   ```
-  -**bot** - keyword where you store the token<br>
-  -**chat_id** - you can use your chat id or use the chat_id method<br>
-  -**sticker** -unique sticker key, you can get it from [idstickerbot](https://t.me/idstickerbot)<br>
+   -**bot** - Функція де в вас знаходиться TOKEN<br>
+  -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br>
+  -**sticker** - унікальний токен стікеру,ви можете його взяти у [idstickerbot](https://t.me/idstickerbot)<br>
 
   <details>
-  <summary> example </summary>
+  <summary> Приклад </summary>
     
 ```python 
-send_sticker(bot,chat_id=chat_id,sticker="CAACAgIAAxkBAAEGdwNjd-IwPaLBzeqJW1DJvDLGnYOJpwACQBMAAvZDSUjqTxpxhtdlhisE")
+send_sticker(bot,chat_id=chat_id,sticker="CAACAgIAAxkBAAEGdwNjd-IwPaLBzeqJW1DJvDLGnYOJpwACQBMAAvZDSUjqTxpxhtdlhisE")#стікер з котиком :)
   ```
     
    </details>
@@ -128,17 +129,17 @@ send_sticker(bot,chat_id=chat_id,sticker="CAACAgIAAxkBAAEGdwNjd-IwPaLBzeqJW1DJvD
 ```python 
 def delete_message(bot,chat_id,msg_id):
   ```
-  -**bot** - keyword where you store the token<br>
-  -**chat_id** - you can use your chat id or use the chat_id method<br>
-  -**msg_id** - you can use your message id or use the message_id method <br>
+  -**bot** - Функція де в вас знаходиться TOKEN<br>
+  -**chat_id** - Ви можете використовувати метод chat_id або своє айді чату<br>
+  -**msg_id** - Ви можете використовувати метод message_id (але тоді повідомлення користувача буде видалятися або у лічних повідомленнях,або у групах де у бота е на не права) чи встановити свое айді Повідомлення <br>
 
 
   <details>
-  <summary> example </summary>
+  <summary> Приклад </summary>
     
 ```python 
 
-delete_message(bot,msg_id=message_id,chat_id=chat_id) #this code will only work in a private chat, so that it would work for the bot to have the right to delete messages or replace message_id with reply_message_id, you can find an example in the folder example->delete_message.py
+delete_message(bot,msg_id=message_id,chat_id=chat_id) 
 
   ```
     
