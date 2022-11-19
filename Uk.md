@@ -16,7 +16,7 @@ git clone https://github.com/Help-urself/bonfire
 
 
 **Встанока веб-перехвадчика**
-- встановлюємо [ngrok](https://ngrok.com/) and start the server according to the instructions on the website.
+- встановлюємо [ngrok](https://ngrok.com/) та запускаємо сервер по інструкції на сайті .
 - та налаштовуємо webhook `https://api.telegram.org/botTOKEN/setWebhook?url=you url ngrok/hosting url`
 
 ### легкий [`send_message`](https://core.telegram.org/method/messages.sendMessage) запрос
