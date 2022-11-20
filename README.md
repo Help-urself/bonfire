@@ -3,7 +3,7 @@
 
 
 
-**bonfire** — framework for [Telegram Bot API](https://core.telegram.org/bots/api) built on [flask](https://flask.palletsprojects.com/en/2.2.x/ ) and [requests](https://requests.readthedocs.io/en/latest/) <br>
+bonfire this framework for [Telegram Bot API](https://core.telegram.org/bots/api) built on [flask](https://flask.palletsprojects.com/en/2.2.x/ ) and [requests](https://requests.readthedocs.io/en/latest/) <br>
 **Ukrainian launge translate -> [click](https://github.com/Help-urself/bonfire/blob/main/Uk.md)**<br>
 **instaling**
 ```python 
@@ -29,6 +29,7 @@ pip install -i https://test.pypi.org/simple/ bonfire-tg-libraly
 ### Simple [`send_message`](https://core.telegram.org/method/messages.sendMessage) request
 
 ```python
+#git clone
 import os
 import sys
 sys.path.append(os.path.abspath('your campfire folder path'))
@@ -56,6 +57,34 @@ def main():#the main name can be anything, it doesn't matter
 if __name__ == '__main__':
        run(app)#app.run(port=8080,host="0.0.0.0",debug=True)
 ```
+
+```py
+#pip install
+from bonfire.Bot import Bots,commands,run
+from flask import Flask
+from bonfire.method import *
+import time
+from flask import request,Response
+import requests
+app = Flask(__name__)
+bot=Bots("TOKEN")#setting up a token for requests
+
+@commands(app)#message handler
+def main():#the main name can be anything, it doesn't matter
+ try:
+    message=request.get_json()#receive a message
+    chat_id,text,message_id,message_author_username,message_author_id,message_author_is_bot,message_author_first_name,message_author_language_code,message_date=parse_message(message=message)#methods message
+    if "/start" in text: #/start command handler
+        send_message(bot=bot,chat_id=chat_id,text=f'hello @{message_author_username}!')#send message
+ except Exception as error:
+     print(error)
+ return Response('OK', status=200)#return to cmd (POST/ 200 OK)
+
+if __name__ == '__main__':
+       run(app)#app.run(port=8080,host="0.0.0.0",debug=True)
+       """set-webhook - > https://api.telegram.org/botTOKEN/setWebhook?url=URL"""
+```
+
   </details>
   
 ## Documentation (in development)
@@ -151,14 +180,3 @@ delete_message(bot,msg_id=message_id,chat_id=chat_id) #this code will only work 
   ```
     
    </details>
-    
-    
-  
-    
-    
-  
-  
-  
-
-
-
