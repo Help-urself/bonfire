@@ -9,6 +9,12 @@
 ```python 
 git clone https://github.com/Help-urself/bonfire
 ```
+or
+
+```python 
+pip install -i https://test.pypi.org/simple/ bonfire-tg-libraly
+
+```
 
 
 ## Examples
