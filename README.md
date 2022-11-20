@@ -1,6 +1,11 @@
 # bonfire
 
 
+[![\[Telegram support\] aiogram live](https://img.shields.io/badge/telegram-aiogram-blue.svg?style=flat-square)](https://t.me/Alex_Stepens)
+[![PyPi Package Version](https://img.shields.io/pypi/v/bonfire-tg-libraly?color=1&logo=1&logoColor=1)](https://test.pypi.org/simple/bonfire-tg-libraly)
+[![PyPi status](https://img.shields.io/pypi/status/aiogram.svg?style=flat-square)](https://test.pypi.org/simple/bonfire-tg-libraly)
+[![Supported python versions](https://img.shields.io/pypi/pyversions/aiogram.svg?style=flat-square)](https://pypi.python.org/pypi/aiogram)
+[![Telegram Bot API](https://img.shields.io/badge/Telegram%20Bot%20API-6.3-blue.svg?style=flat-square&logo=telegram)](https://core.telegram.org/bots/api)
 
 
 bonfire this framework for [Telegram Bot API](https://core.telegram.org/bots/api) built on [flask](https://flask.palletsprojects.com/en/2.2.x/ ) and [requests](https://requests.readthedocs.io/en/latest/) <br>
