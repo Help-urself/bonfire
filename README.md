@@ -2,7 +2,7 @@
 
 
 [![\[Telegram support\]](https://img.shields.io/badge/telegram-support-blue)](https://t.me/Alex_Stepens)
-[![PyPi Package Version](https://img.shields.io/pypi/pyversions/bonfire-tg-libraly)](https://img.shields.io/pypi/v/bonfire-tg-libraly)
+[![PyPi Package Version](https://img.shields.io/pypi/v/bonfire-tg-libraly)](https://img.shields.io/pypi/v/bonfire-tg-libraly)
 [![PyPi status](https://img.shields.io/pypi/status/aiogram.svg?style=flat-square)](https://test.pypi.org/simple/bonfire-tg-libraly)
 ![Supported python versions](https://img.shields.io/pypi/pyversions/bonfire-tg-libraly)
 [![Telegram Bot API](https://img.shields.io/badge/Telegram%20Bot%20API-6.3-blue.svg?style=flat-square&logo=telegram)](https://core.telegram.org/bots/api)
