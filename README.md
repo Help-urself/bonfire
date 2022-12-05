@@ -98,6 +98,109 @@ if __name__ == '__main__':
        """set-webhook - > https://api.telegram.org/botTOKEN/setWebhook?url=URL"""
 ```
 
+### Simple [`button`](https://core.telegram.org/method/messages.sendInlineBotResult) request
+
+```python
+#git clone
+
+import requests
+from flask import Flask
+import os
+import sys
+sys.path.append(os.path.abspath('you path to bonfire'))
+from bonfiree.methods import *
+from bonfiree.Bot import *
+
+
+app = Flask(__name__)
+token = "..."#token
+
+
+@bot.handler
+def start():  
+    if msg.text == "/button": 
+     button = {
+                  "inline_keyboard": [
+                  
+                  [{"text":f"url button","url":"https://adventofcode.com/2022/leaderboard"}],
+                  [{"text":f"callback button 'button'","callback_data":f"button"}],
+                  [{"text":f"callback button 'button2'","callback_data":f"button2"}]
+                                     ]
+             }
+     buttons(token,chat_id=msg.chat_id,button=button,text='button ')
+
+@bot.handler
+def button_event():
+     answer_callback(bot=token,msg=msg,data="/button",text=f"Hello {msg.callback_from_username},is test function answer_callback",show_alters=True)
+     callback(bot=token,data="button",data_json=msg,text="you clicked button 1")
+     callback(bot=token,data="button2",data_json=msg,text="you clicked button 2")
+
+
+@commands(app)
+def main():
+ global msg
+ msg=message(request.get_json())#message handler
+ start()#start function start
+ button_event()
+
+
+ return Response('OK', status=200)#return status ok to cmd
+if __name__ == '__main__':
+       run(app)
+
+       """set-webhook - > https://api.telegram.org/botTOKEN/setWebhook?url=URL"""
+
+```
+
+```py
+#pip install
+
+import requests
+from flask import Flask
+from bonfiree.methods import *
+from bonfiree.Bot import *
+
+
+app = Flask(__name__)
+token = "..."#token
+
+
+@bot.handler
+def start():  
+    if msg.text == "/button": 
+     button = {
+                  "inline_keyboard": [            
+                   [{"text":f"url button","url":"https://adventofcode.com/2022/leaderboard"}],
+                   [{"text":f"callback button 'button'","callback_data":f"button"}],
+                   [{"text":f"callback button 'button2'","callback_data":f"button2"}]
+                                     ]
+              }
+     buttons(token,chat_id=msg.chat_id,button=button,text='button ')
+
+@bot.handler
+def button_event():
+     answer_callback(bot=token,msg=msg,data="/button",text=f"Hello {msg.callback_from_username},is test function answer_callback",show_alters=True)
+     callback(bot=token,data="button",data_json=msg,text="you clicked button 1")
+     callback(bot=token,data="button2",data_json=msg,text="you clicked button 2")
+
+
+@commands(app)
+def main():
+ global msg
+ msg=message(request.get_json())#message handler
+ start()#start function start
+ button_event()
+ 
+ 
+
+
+ return Response('OK', status=200)#return status ok to cmd
+if __name__ == '__main__':
+       run(app)
+
+       """set-webhook - > https://api.telegram.org/botTOKEN/setWebhook?url=URL"""
+```
+  
   </details>
   
 ## Documentation (in development)
@@ -191,7 +294,7 @@ def delete_message(token,chat_id,msg_id):
     
 ```python 
 
-delete_message(token,msg_id=msg.id,chat_id=msg.chat_id) #this code will only work in a private chat, so that it would work for the bot to have the right to delete messages or replace message_id with reply_message_id, you can find an example in the folder example->delete_message.py
+delete_message(token,msg_id=msg.id,chat_id=msg.chat_id)
 
   ```
     
