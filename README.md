@@ -13,7 +13,7 @@ or
 
 ```python 
 pip install -i https://test.pypi.org/simple/ bonfire-tgb
-pip install bonfire-tg-libraly
+pip install bonfire-tg
 
 
 ```
