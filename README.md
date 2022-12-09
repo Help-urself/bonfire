@@ -55,7 +55,7 @@ if __name__ == '__main__':
 ```
 
 ```python
-#git clone
+#pip install
 import os
 import sys
 from bonfire import *
